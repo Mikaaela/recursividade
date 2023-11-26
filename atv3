@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int contarDigitos(int numero){
+    if(numero == 0)
+        return 0;
+    else
+        return 1 + contarDigitos(numero/10);
+}
+
+int main() {
+    int numero;
+    printf("Digite um numero: ");
+    scanf("%d", &numero);
+    
+    int quantidadeDigitos = contarDigitos(numero);
+    printf("O numero digitado possui %d digitos.", quantidadeDigitos);
+    
+    return 0;
+}

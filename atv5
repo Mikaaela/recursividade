@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+int potencia(int a, int b) {
+    if(b == 0) {
+        return 1;
+    }
+
+    return a * potencia(a, b - 1);
+}
+
+int main() {
+    int a, b;
+    
+    printf("Digite o valor de a: ");
+    scanf("%d", &a);
+
+    printf("Digite o valor de b: ");
+    scanf("%d", &b);
+
+    int resultado = potencia(a, b);
+    printf("%d elevado a %d = %d
+", a, b, resultado);
+
+    return 0;
+}

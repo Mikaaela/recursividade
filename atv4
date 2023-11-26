@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<string.h>
+
+void inverterString(char str[], int inicio, int fim) {
+    char temp;
+    if (inicio >= fim) {
+        return;
+    }
+    temp = str[inicio];
+    str[inicio] = str[fim];
+    str[fim] = temp;
+    inverterString(str, inicio + 1, fim - 1);
+}
+
+int main() {
+    char str[100];
+    printf("Digite uma string: ");
+    fgets(str, 100, stdin);
+    str[strcspn(str, "\n")] = '\0'; 
+    
+    inverterString(str, 0, strlen(str) - 1);
+    
+    printf("String invertida: %s
+", str);
+    
+    return 0;
+}
